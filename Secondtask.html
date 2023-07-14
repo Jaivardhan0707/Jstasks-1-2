@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+</head>
+<body>
+    <script>
+        function countChocolates(totalMoney, chocolateCost) {
+  let money = parseFloat(totalMoney);
+  let cost = parseFloat(chocolateCost);
+  if (isNaN(money) || isNaN(cost)) {
+    return "Invalid Input";
+  }
+  money = Math.abs(money);
+  let chocolatesBought = Math.floor(money / cost);
+  let wrappers = chocolatesBought;
+  let chocolatesEaten = chocolatesBought;
+  while (wrappers >= 3) {
+    let additionalChocolates = Math.floor(wrappers / 3);
+    chocolatesEaten += additionalChocolates;
+    wrappers = wrappers % 3 + additionalChocolates;
+  }
+  return chocolatesEaten;
+}
+console.log(countChocolates("4$", "1$")); 
+console.log(countChocolates("55 $", "5$"));
+console.log(countChocolates("I have 68$", "2$")); 
+console.log(countChocolates("I got -68$ from my mom ", "2$"));
+
+    </script>
+</body>
+</html>

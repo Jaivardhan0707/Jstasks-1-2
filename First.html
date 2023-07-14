@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+   
+    
+</head>
+<body>
+    <script>
+        function Ascor(arr) {
+  let result = [];
+
+  for (let sublist of arr) {
+    let numbers = [];
+    let characters = [];
+
+    for (let element of sublist) {
+      if (typeof element === 'number') {
+        numbers.push(element);
+      } else {
+        characters.push(element);
+      }
+    }
+
+    numbers.sort((a, b) => a - b);
+    result.push([...numbers, ...characters]);
+  }
+
+  return result;
+}
+let arr1 = [
+  [11, 12, 24, 23, 'a', 'b'],
+  [56, 'c', 45],
+  [67, 'd'],
+  ['f', 'e', 78]
+];
+
+let arr2 = [
+  [11, 26, 45.4, 'f', 'a', 'b'],
+  [0],
+  [1.5, 'd', 'X', 35, 's'],
+  ['f', 'e', 58],
+  ['p', 'Y', 'Z'],
+  [98, 72]
+];
+
+console.log(Ascor(arr1));
+console.log(Ascor(arr2));
+
+
+    </script>
+</body>
+</html>
